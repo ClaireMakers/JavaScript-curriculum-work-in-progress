@@ -1,17 +1,16 @@
-## Creating Full Stack Web Applications with JavaScript
-
-When JavaScript was created, it used to **strictly run on the browser**, and was used to **add dynamic effects on web pages**. Now, we can use JavaScript as a **full-stack language**, meaning that it's a tool to **build both the front and back-end of web applications**. So far, you have been using **the Node.js environment** to run your code, which is **the environment used to run back-end JavaScript code**. Next week, you will see how to run JavaScript in your browser - for now, we will have a look at a **Express**, a common JavaScript back-end framework and learn how to build a very simple server with it. 
-
-
-Learning objectives: 
+## Objectives: 
 - Learn how a basic Express server is built
 - Learn about JSON data
 - Write a simple Express route and check it works using Postman
 
-Key concepts: 
+## Key Concepts: 
 - routes or endpoints
 - HTTP requests and responses
 - JSON data
+
+## Creating Full Stack Web Applications with JavaScript
+
+When JavaScript was created, it used to **strictly run on the browser**, and was used to **add dynamic effects on web pages**. Now, we can use JavaScript as a **full-stack language**, meaning that it's a tool to **build both the front and back-end of web applications**. So far, you have been using **the Node.js environment** to run your code, which is **the environment used to run back-end JavaScript code**. Next week, you will see how to run JavaScript in your browser - for now, we will have a look at a **Express**, a common JavaScript back-end framework and learn how to build a very simple server with it. 
 
 ## What is Express?
 
@@ -133,14 +132,16 @@ Whe we hit that enpoint with Postman, here is what we see:
 
 ![image](./PostMan_Response_Screenshot.png)
 
-This is our JavaScript object sent back as a part of our response, converted into JSON by Express. 
+This is our JavaScript object sent back as a part of our response, converted into JSON by Express. You can [download this simple server](link_to_github_here) and try to hit the endpoint with Postman yourself!
 
 ## Challenge: 
 
-Here's a link to some boilerplate Express code - clone the repo and run the following to get started: 
+[Here's a link to some boilerplate Express code](https://github.com/makersacademy/Express-Simple-Server-JS-Fundamentals) - fork and clone the repo and run the following to get started: 
 
 ```
 npm install
+
+node app.js // This will start the server on a local port on your machine
 ```
 
 Create the following endpoints on this server: 

@@ -17,4 +17,3 @@ app.get("/cats", (req, res) => {
   const data = { catsArray: ["Ragdoll", "Moggie"] } 
   res.send(data);
 });
-
