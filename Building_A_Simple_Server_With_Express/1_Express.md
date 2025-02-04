@@ -14,7 +14,9 @@ When JavaScript was created, it used to **strictly run on the browser**, and was
 
 ## What is Express?
 
-This section will be building on knowledge from the Web Applications week, especially routes and HTTP requests/responses.
+*This section will be building on knowledge from the Web Applications week, especially routes and HTTP requests/responses.*
+
+[Click here to re-read the Web Applications week content.](https://journey.makers.tech/pages/requests-and-responses)
 
 <details>
 <summary> I need a refresher </summary>
@@ -154,6 +156,11 @@ Create the following endpoints on this server:
 
 Test them using Postman, and make sure they return the data specified in the table above. 
 
+
+--------------------
+
+
+-> I think these kinds of exercise would work best further into the challenges. 
 ## Extension Challenge: 
 If you feel confident with the content above, you can try to tackle this challenge! 
 
