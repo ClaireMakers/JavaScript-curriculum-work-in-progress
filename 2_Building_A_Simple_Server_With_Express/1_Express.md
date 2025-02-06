@@ -151,13 +151,23 @@ Create the following endpoints on this server:
 
 | Endpoint    | Method   | Response Data   |
 | ------------| ---------|----------------------------------------------------|
+| /me         | GET      |  {"name": "yourName"}|
 | /cities     | GET      |  {"cityList": ["Nairobi", "Tokyo", "Helsinki", "Berlin"]}|
-| /countries  | GET      | {"countriesList": [{ "country": "France", "language": "French", "id": "1" }, {"country": "Spain", "language": "Spain", "id": 2}]} |
+| /countries  | GET      | {"countriesList": [{ "country": "France", "language": "French", "id": "1" }, {"country": "Spain", "language": "Spanish", "id": 2}]} |
 
 Test them using Postman, and make sure they return the data specified in the table above. 
 
 
+
+
+
+
+
+
 --------------------
+
+
+
 
 
 -> I think these kinds of exercise would work best further into the challenges. 
