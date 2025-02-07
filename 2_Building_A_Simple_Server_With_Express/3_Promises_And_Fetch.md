@@ -39,7 +39,7 @@ A few different things are happening in the code snippet above:
 
 1. The `await` keyword in front of the `fetch` function call means that this is a long running operation that will not finish executing immediately - this `await` keyword, alongside the `async` one we used when declaring our function forms the basis of the promise syntax. Here, it means that the `response` variable will not be set to the response from the server before the request has finished executing. 
 
-When you see the word `await`, it is tempting to think that your programme stops executing and "waits" for the data to be returned, but it's not strictly true - everything discussed in the section before this one still applies. When encountering a long-running task like a fetch request, JavaScript will run all other short-running tasks first, before finishing to execute asynchronous functions. 
+When you see the word `await`, it is tempting to think that your programme stops executing and "waits" for the data to be returned, but it's not strictly true - everything discussed in the section before this one still applies. When encountering a long-running task like a fetch request, JavaScript will run all other short-running tasks first, before finishing to execute asynchronous functions.
 
 Let's have a look at an example in practice: 
 
@@ -49,6 +49,7 @@ VIDEO HERE - GO OVER:
 - Showing pending promise 
 - Showing res.json()
 - Show anti-pattern - for instance, try to push an element to an array outside the function, and show that it's not possible to do that. 
+- Show that you can't return anything outside of a promise chain
 ]
 
 ```
