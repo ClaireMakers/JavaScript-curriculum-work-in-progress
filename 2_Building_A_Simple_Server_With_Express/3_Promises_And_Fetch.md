@@ -121,7 +121,7 @@ Create a new file to write a few functions that will make requests to your own b
 
 ```
 fetchMyName()
-----> { name: "youName" }
+----> { name: "yourName" }
 
 fetchCities()
 ----> { cityList: ["Nairobi", "Tokyo", "Helsinki", "Berlin"] }

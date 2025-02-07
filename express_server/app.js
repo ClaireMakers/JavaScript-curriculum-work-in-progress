@@ -14,6 +14,6 @@ app.listen(port, () => {
 });
 
 app.get("/cats", (req, res) => {
-  const data = { catsArray: ["Ragdoll", "Moggie"] } 
+  const data = { catsArray: ["Ragdoll", "Moggy", "Siamese"] } 
   res.send(data);
 });
