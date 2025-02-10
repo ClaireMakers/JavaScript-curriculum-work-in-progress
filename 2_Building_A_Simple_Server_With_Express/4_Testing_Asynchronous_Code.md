@@ -10,7 +10,6 @@ So far, **we have been writing tests for synchronous functions only**. When we t
 Let's see how we should deal with this new case scenario with Jest. 
 
 ## Demonstration: 
-
 I will test-drive a function that uses my simple Express server. My function will:
 
 1. Take a number `index` as its argument.
@@ -75,9 +74,10 @@ describe("fetchCatAtIndex", () => {
 
 ## Exercise: 
 
-Test-drive the case we didn't do together, where the index doesn't match any element in the array. Refer to the test cases outline in the section above if you are not sure what should happen in this scenario. 
+[Create a new JavaScript project folder](https://journey.makers.tech/pages/pill-setting-up-a-javascript-project), and test-drive the case we didn't do together, where the index doesn't match any element in the array. Refer to the test cases outline in the section above if you are not sure what should happen in this scenario. 
 
-[Here is a link to the cat server code for you to run it locally on your machine.](TODO:Add_link) 
+[Here is a link to the cat server code for you to run it locally on your machine.](TODO:Add_link). You can copy-paste the code used in the demonstration above in files in your project folder and continue building up from there. 
+
 
 <details>
 <summary>Potential solution</summary>
@@ -130,11 +130,13 @@ describe("fetchCatAtIndex", () => {
 
 ## Challenge: 
 
+Create a new JavaScript project folder again for this exercise. Overall, it's better to have a few different folders with the different exercises so you can separate them easily and not get confused between them, and it's also easier to pair up on newly created folders. 
+
 Test-drive a function that fetches data from the [pokeAPI](https://pokeapi.co/). The pokeAPI typically responds with a lot of data. Your function should isolate only the following properties for use:
 - name
 - sprites { front-default }
 
-Have a look [at the documentation](https://pokeapi.co/) to understand how the data coming back from the server is structured, then have a go at writing your own function. If you were to use the data from the pokemon ditto, your function should work this way when called: 
+Have a look [at the documentation](https://pokeapi.co/) to understand how the data coming back from the server is structured, then have a go at writing your own function and tests. If you were to use the data from the pokemon ditto, your function should work this way when called: 
 
 ```
 const ditto = await fetchPokemonData("ditto");
