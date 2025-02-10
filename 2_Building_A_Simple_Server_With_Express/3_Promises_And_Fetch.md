@@ -44,12 +44,7 @@ When you see the word `await`, it is tempting to think that your programme stops
 Let's have a look at an example in practice: 
 
 [
-VIDEO HERE - GO OVER:
-- Execution order 
-- Showing pending promise 
-- Showing res.json()
-- Show anti-pattern - for instance, try to push an element to an array outside the function, and show that it's not possible to do that. 
-- Show that you can't return anything outside of a promise chain
+VIDEO : https://vimeo.com/1055265907?share=copy#t=0
 ]
 
 ```
