@@ -1,4 +1,4 @@
-## Testing an Express Endpoint: 
+## Testing an Express Endpoint:
 
 ## Objective:
 1. Learn how to write tests for asynchronous code.

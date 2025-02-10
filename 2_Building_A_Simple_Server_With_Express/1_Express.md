@@ -69,7 +69,7 @@ In this video, you will learn about the basic syntax of an Express server. We wi
 | /cats       | GET      | Cat data        |
 
 
-VIDEO HERE
+VIDEO HERE --> https://vimeo.com/1055199222?share=copy#t=0
 
 
 Here are the basic blocks of our server:
@@ -143,7 +143,7 @@ This is our JavaScript object sent back as a part of our response, converted int
 ```
 npm install
 
-node app.js // This will start the server on a local port on your machine
+node app.js // This will start the server on a local port on your machine - don't forget to restart it each time you make a change you want to test with Postman. 
 ```
 
 Create the following endpoints on this server: 
@@ -151,12 +151,11 @@ Create the following endpoints on this server:
 
 | Endpoint    | Method   | Response Data   |
 | ------------| ---------|----------------------------------------------------|
-| /me         | GET      |  {"name": "yourName"}|
-| /cities     | GET      |  {"cityList": ["Nairobi", "Tokyo", "Helsinki", "Berlin"]}|
+| /me         | GET      | {"name": "yourName"}|
+| /cities     | GET      | {"cityList": ["Nairobi", "Tokyo", "Helsinki", "Berlin"]} |
 | /countries  | GET      | {"countriesList": [{ "country": "France", "language": "French", "id": "1" }, {"country": "Spain", "language": "Spanish", "id": 2}]} |
 
 Test them using Postman, and make sure they return the data specified in the table above. 
-
 
 
 
