@@ -11,6 +11,7 @@ const dataArray = [];
 const fetchData = async () => { //an async function contains long running tasks 
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu"); //sends an HTTP request to the relevant server based on the url you pass as its argument.
     const data = await response.json();
+    console.log(data);
     dataArray.push(data);
     return response; 
 }
@@ -19,7 +20,7 @@ const fetchData = async () => { //an async function contains long running tasks
 //     return "This is a sync function"
 // }
 
-fetchData();
-console.log(dataArray);
+console.log(fetchData());
+console.log(dataArray)
 // console.log(syncFunction());
 
