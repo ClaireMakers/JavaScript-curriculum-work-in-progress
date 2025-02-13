@@ -60,7 +60,7 @@ If you feel confident with the content in this section so far, you can try to ta
 
 Look for the Route Parameters [section in the Express docs](https://expressjs.com/en/guide/routing.html), and try to figure out how to implement this modified `/countries` endpoint. 
 
-**Hint:** *It should be separate from the simple `/countries` endpoint implement in the previous exercise.*
+**Hint:** *It should be separate from the simple `/countries` endpoint implemented in previous exercises.*
 
 | Endpoint    | Method   | Response Data   |
 |-------------|----------|-----------------|
