@@ -81,14 +81,14 @@ const fetchData = async () => {
 
 Let's run this code together and examine what happens: 
 
-[Video here to go through the code above]
+[VIDEO link: https://vimeo.com/1055542622?share=copy#t=0]
 
 ## Using Promises and Fetch to make requests to our own Express back-end: 
 
 So far, we have been sending our requests to an external server available to us on the internet, but how do we make requests to our own local development servers? Take a moment to ponder what we might need to do differently before starting the video, and see if you can guess what part of our code we'll need to modify to send calls to our own back-end! 
 
 
-[Video of me showing how to do that using the cat server]
+VIDEO [https://vimeo.com/1055554403?share=copy#t=0]
 
 
 ```
@@ -98,6 +98,12 @@ const fetchCatData = async () => {
         /*The url lets us interact with any server we like, including our own.
         Here we send a GET request to our Express back-end: */
         const response = await fetch("http://localhost:3000/cats");
+
+        /*Custom error handling for when my server responds with an error code*/
+        if (!response.ok) { 
+            //handle response not being valid here
+            throw new Error("Invalid response from server");
+        }
 
         const catData = await response.json(); 
 
@@ -127,5 +133,4 @@ fetchCountries()
 ----> { countriesList: [{ country: "France", language: "French", id: "1" }, {country: "Spain", language: "Spanish", "id": 2}]}
 ```
 
-
-
+**Extension:** create custom errors to handle error responses from the server. 

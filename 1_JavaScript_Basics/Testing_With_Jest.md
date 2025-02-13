@@ -124,8 +124,7 @@ objects, each object having two properties `name` and `price`.
 To complete this question, you will some things you've learned previously:
   * The `filter` and `map` methods.
   * How to access an object property.
-  * You'll also need to find out how to verify whether a string is the prefix for another
-    string.
+  * You'll also need to find out how to verify whether a string is the prefix for another string.
   * Use the `toEqual()` Jest matcher.
 
 You'll test-drive a function `searchCandies` that takes the following two arguments: a

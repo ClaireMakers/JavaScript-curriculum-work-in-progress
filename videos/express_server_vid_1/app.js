@@ -22,10 +22,5 @@ app.get("/cats", (req, res) => {
     res.send(data); //converted into JSON data 
 });
 
+module.exports = app; 
 
-
-/*In this video, we will:
-- Have a look at the basic building blocks of an Express server
-- Write an endpoint together: url: "/cats", method: "GET", response: { catsArray: ["Ragdoll", "Moggy", "Siamese"] } 
-- We will then use Postman to test our endpoint and check it behaves as expected
-*/

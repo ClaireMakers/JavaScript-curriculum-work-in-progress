@@ -15,7 +15,7 @@ I will test-drive a function that uses my simple Express server. My function wil
 1. Take a number `index` as its argument.
 1. Make a request to the `/cats` endpoint we've been using so far.
 1. Isolate the array on `catsArray` key of my data.
-1. Return the a promise and the cat at the index number passed as an argument to my function. 
+1. Return a promise and the cat at the index number passed as an argument to my function.  
 
 From this, we can isolate a few test cases and expected behaviours in these scenarios: 
 ```
@@ -34,42 +34,43 @@ console.log(cat);
 
 Let's TDD the `fetchCatAtIndex(index)` function: 
 
-[VIDEO HERE]
+[VIDEO LINK: https://vimeo.com/1055937086?share=copy#t=0]
+
+
+Here is the code written during the video above: 
 
 fetchCatAtIndex.js
 ```
-const fetchCatAtIndex = (index) => {
-    if(typeof(index) !== "number") {
-        return "Index must be a number";
-    }
+const fetchCatAtIndex = async (index) => {
+  try {
+        if(typeof(index) !== "number") { 
+            throw new Error("Index must be a number"); 
+        }
 
-    try {
-        const res = await fetch("http://localhost:3000/cats");
-        const data = res.json();
+        const response = await fetch("http://localhost:3000/cats");
+        const catData = await response.json();
 
-        const catsArray = data.catsArray; 
-        const cat = catsArray[index];
+        const cat = catData.catsArray[index];
 
         return cat; 
-    } catch(error) {
-        console.log(error)
-    }  
+    } catch (error) { 
+        throw error; 
+    }
 }
 ```
 
 fetchCatAtIndex.test.js
 ```
 describe("fetchCatAtIndex", () => {
-    it("returns an error when the index in the input is not a number", async () => {
-        const returnedString = await fetchCatAtIndex("Not a number");
-        expect(returnedString).toBe("Index must be a number");
+    it("returns a promise with the appropriate cat data when there is a cat at the index", async () => {
+        const catData = await fetchCatAtIndex(2);
+        expect(catData).toEqual("Siamese");
     });
 
-    it("returns a cat when there is one at that index in the array", async () => {
-         const returnedString = await fetchCatAtIndex(0);
-         expect(returnedString).toBe(Ragdoll);
-    }) 
-})
+    it("throws an error when the index input is not a number", async () => { 
+        await expect(fetchCatAtIndex("string")).rejects.toThrow("Index must be a number");
+    })
+});
 ```
 
 ## Exercise: 
@@ -84,45 +85,46 @@ describe("fetchCatAtIndex", () => {
 
 fetchCatAtIndex.js
 ```
-const fetchCatAtIndex = (index) => {
-    if(typeof(index) !== "number") {
-        return "Index must be a number";
-    }
-    
+
+const fetchCatAtIndex = async (index) => {
     try {
-        const res = await fetch("http://localhost:3000/cats");
-        const data = res.json();
+        if(typeof(index) !== "number") { 
+            throw new Error("Index must be a number"); 
+        }
 
-        const catsArray = data.catsArray; 
-        const cat = catsArray[index];
+        const response = await fetch("http://localhost:3000/cats");
+        const catData = await response.json();
 
-        if(!cat) {
-            return "No cat was found that that index";
+        const cat = catData.catsArray[index];
+
+        if (!cat) {
+          throw new Error("No cat was found that that index");
         }
 
         return cat; 
-    } catch(error) {
-        console.log(error)
-    }  
+    } catch (error) {
+        throw error; 
+    }
 }
 ```
 
 fetchCatAtIndex.test.js
 ```
 describe("fetchCatAtIndex", () => {
-    it("returns an error when the index in the input is not a number", async () => {
-        const returnedString = await fetchCatAtIndex("Not a number");
-        expect(returnedString).toBe("Index must be a number");
+      it("returns a promise with the appropriate cat data when there is a cat at the index", async () => {
+        const catData = await fetchCatAtIndex(2);
+        expect(catData).toEqual("Siamese");
     });
 
-    it("returns a cat when there is one at that index in the array", async () => {
-         const returnedString = await fetchCatAtIndex(0);
-         expect(returnedString).toBe(Ragdoll);
-    }) 
-    it("returns an error when there is nothing at the index passed to the function", () => {
-        const returnedString = await fetchCatAtIndex(0);
-        expect(returnedString).toBe("No cat was found that that index");
+    it("throws an error when the index input is not a number", async () => { 
+        await expect(fetchCatAtIndex("string")).rejects.toThrow("Index must be a number");
     })
+
+     it("is thrown with an error when the index in the input outside teh scope of the array", async () => {
+       await expect(fetchCatAtIndex(10)).rejects.toThrow(
+         "No cat was found that that index"
+       );
+     });
 })
 
 ```
@@ -145,3 +147,7 @@ console.log(ditto);
 ---------TERMINAL------------
 {name: "ditto", sprites: { front-default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" }}
 ```
+
+Two levels of difficulty: 
+- No error handling, just happy path
+- adding error handling
